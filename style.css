@@ -1,31 +1,64 @@
 body, html {
-    margin: 0;
-    height: 100%;
-    font-family: sans-serif;
-  }
-  
-  .background {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1f2b);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    z-index: -1;
-  }
-  
-  @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  
+  margin: 0;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1f2b);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  min-width: 320px;
+}
+
+.form-control, .form-select, .btn {
+  max-width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-label {
+  text-align: center;
+  display: block;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 576px) {
   .glass-card {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 1rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    min-width: 320px;
+    padding: 1rem;  /* Make the card padding smaller on mobile */
+    width: 90%;     /* Ensure the card takes up most of the screen */
   }
+
+  .form-control, .form-select, .btn {
+    width: 100%;     /* Make buttons and inputs take up full width on mobile */
+    max-width: none; /* Remove any width limits */
+  }
+
+  .d-flex {
+    gap: 10px; /* Add gap between buttons */
+  }
+
+  .btn {
+    font-size: 1.2rem; /* Slightly larger font for mobile */
+    padding: 12px; /* Adjust padding for better button touch areas */
+  }
+}
